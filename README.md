@@ -1,4 +1,5 @@
 # DSA-LAB4
+## PROGRAM TO DATABASE ENTRIES
         #include<stdio.h>
         struct appliance
         {
