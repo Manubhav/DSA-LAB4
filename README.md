@@ -1,45 +1,50 @@
 # DSA-LAB4
-    #include<stdio.h>
-    struct appliance
-    {
-      char name[20];
-      long long int price,id;
-      float discount;
-    };
-    void read()
-    {
-      struct appliance a[10];
-      int n,i;
-      printf("Enter number of products:");
-      scanf("%d",&n);
-        for(i=0;i<n;i++)
+        #include<stdio.h>
+        struct appliance
         {
-          printf("\nEnter Product name:");
-            scanf("%s",a[i].name);
-          printf("Enter Product id:");
-          scanf("%lld",&a[i].id);
-          printf("Enter Product price:");
-          scanf("%lld",&a[i].price);
-          printf("Enter Product discount:");
-          scanf("%f",&a[i].discount);
-        }
-    }
-    void write()
-      {
-      int n,i;
-      struct appliance a[10];	
-        for(i=0;i<n;i++)
+            char name[20];
+            long long int price,id;
+            float discount;
+        };
+        struct appliance read()
         {
+            struct appliance a;
 
-          printf("\nProduct name:%s",a[i].name);
-              printf("\nProduct id:%lld",a[i].id);
-              printf("\nProduct price:%lld",a[i].price);
-              printf("\nProduct discount:%f%",a[i].discount);
+                    printf("\nEnter Product name:");
+                    scanf("%s",a.name);
+                    printf("Enter Product id:");
+                    scanf("%lld",&a.id);
+                    printf("Enter Product price:");
+                    scanf("%lld",&a.price);
+                    printf("Enter Product discount:");
+                    scanf("%f",&a.discount);
+
+            return a;	
         }
-      }
-      main()
-      {
-        read();
-        write();
-      }
+        struct appliance write(struct appliance a)
+            {
+
+                    printf("\nProduct name:%s",a.name);
+                    printf("\nProduct id:%lld",a.id);
+                    printf("\nProduct price:%lld",a.price);
+                    printf("\nProduct discount:%f%",a.discount);
+
+            }
+            main()
+            {
+                struct appliance x[10];
+                int i,n;
+                printf("Enter no. of products:");
+                scanf("%d",&n);
+                for(i=0;i<n;i++)
+                {
+                x[i]=read();
+                }
+                for(i=0;i<n;i++)
+                {
+                write(x[i]);
+                }
+            }
+
+
 
